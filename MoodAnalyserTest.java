@@ -25,7 +25,21 @@ public class MoodAnalyserTest {
 	@Test
 	public void testMoodAnalysis()
 	{
-		MoodAnalyser moodAnalyser = new MoodAnalyser("This is a happy message");
+		MoodAnalyser happyMoodAnalyser = new MoodAnalyser("This is a happy message");
+		String happyMood = happyMoodAnalyser.mood;
+        Assert.assertEquals(happyMood,"HAPPY");	
+        MoodAnalyser sadMoodAnalyser = new MoodAnalyser("This is a sad message");
+		String sadMood = sadMoodAnalyser.mood;
+        Assert.assertEquals(sadMood,"SAD");
+	}
+
+	@Test
+	public void exceptionMoodAnalysis()
+	{
+		MoodAnalyser moodAnalyser = new MoodAnalyser();
+		String mood = moodAnalyser.analyseMood2(null);
+		Assert.assertEquals(mood,"HAPPY");
 	}
 
 }
+
