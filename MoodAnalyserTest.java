@@ -33,6 +33,7 @@ public class MoodAnalyserTest {
         Assert.assertEquals(sadMood,"SAD");
 	}
 
+   //Test Case 2.1
 	@Test
 	public void exceptionMoodAnalysis()
 	{
@@ -41,5 +42,22 @@ public class MoodAnalyserTest {
 		Assert.assertEquals(mood,"HAPPY");
 	}
 
+   //TEST CASE 3.1
+   @Test
+	public void customException() throws MoodAnalysisException
+	{
+		MoodAnalyser moodAnalyser = new MoodAnalyser();
+		String mood = moodAnalyser.analyseMood3(null);
+		Assert.assertEquals(mood," ");
+	}
+
+   //TEST CASE 3.2
+   @Test
+   public void customException() throws MoodAnalysisException
+   {
+      MoodAnalyser moodAnalyser = new MoodAnalyser();
+      String mood = moodAnalyser.analyseMood4(null);
+      Assert.assertEquals(mood,"EMPTY MOOD");
+   }
 }
 
